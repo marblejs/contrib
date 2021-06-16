@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": false,
+    "resolveJsonModule": true,
+    "incremental": true,
+    "pretty": true,
+    "strict": true,
+    "target": "es6",
+    "lib": [
+      "ES2020"
+    ],
+    "baseUrl": "."
+  },
+  "include": [
+    "./packages/**/*.ts",
+    "./packages/**/*.d.ts",
+    "./packages/**/*.json"
+  ]
+}
