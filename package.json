@@ -3,26 +3,15 @@
   "version": "1.0.0",
   "description": "A community driven packages for Marble.js",
   "scripts": {
-    "build": "lerna run build",
+    "build": "yarn workspaces run build",
     "postbuild": "rimraf packages/**/*.spec.js packages/**/*.spec.d.ts packages/**/*.spec.d.ts.map",
-    "watch": "lerna run --parallel --stream watch",
     "lint": "eslint ./packages/**/src ./packages/**/test --ext .ts",
     "pretest": "yarn lint",
-    "link:all": "lerna exec -- yarn link",
-    "unlink:all": "lerna exec -- yarn unlink",
     "test": "yarn test:unit && yarn test:integration",
     "test:unit": "SCOPE=unit ./scripts/run-tests.sh",
     "test:watch": "SCOPE=watch ./scripts/run-tests.sh",
     "test:integration": "SCOPE=integration ./scripts/run-tests.sh",
-    "clean": "lerna run clean && rimraf packages/*/tsconfig.tsbuildinfo",
-    "purge": "yarn clean && rimraf node_modules",
-    "prepublishOnly": "yarn clean && yarn build && yarn test",
-    "publish": "lerna publish --no-push --force-publish=*",
-    "publish:canary:patch": "lerna publish --no-push --dist-tag dev --canary patch --preid dev --force-publish=* --ignore-scripts",
-    "publish:canary:minor": "lerna publish --no-push --dist-tag dev --canary minor --preid dev --force-publish=* --ignore-scripts",
-    "publish:canary:major": "lerna publish --no-push --dist-tag next --canary major --preid next --force-publish=* --ignore-scripts",
-    "publish:canary:major:github": "lerna publish --dist-tag next --canary major --preid next --yes --force-publish=* --no-verify-access --no-git-reset --ignore-scripts",
-    "publish:rc": "lerna publish prerelease --no-push --dist-tag rc --preid rc --force-publish=* --ignore-scripts"
+    "purge": "yarn clean && rimraf node_modules"
   },
   "husky": {
     "hooks": {
@@ -78,7 +67,7 @@
     "eslint-plugin-deprecation": "^1.2.1",
     "husky": "^4.2.5",
     "jest": "^26.4.2",
-    "lerna": "^4.0.0",
+    "np": "^7.5.0",
     "mock-req": "^0.2.0",
     "rimraf": "^3.0.1",
     "ts-jest": "^26.3.0",

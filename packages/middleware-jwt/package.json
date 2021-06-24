@@ -1,6 +1,6 @@
 {
   "name": "@marblejs-contrib/middleware-jwt",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "JWT middleware for Marble.js",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,8 +8,12 @@
     "start": "yarn watch",
     "watch": "tsc -w",
     "build": "tsc",
-    "clean": "rimraf dist",
-    "test": "jest --config ../../jest.config.js"
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "test": "jest --config jest.config.js",
+    "prepublish:package": "yarn clean && yarn build && yarn test",
+    "prepublish:package:dev": "yarn prepublish:package",
+    "publish:package": "yarn np",
+    "publish:package:dev": "yarn np --tag dev"
   },
   "files": [
     "dist/"

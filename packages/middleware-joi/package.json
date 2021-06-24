@@ -1,6 +1,6 @@
 {
   "name": "@marblejs-contrib/middleware-joi",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "A joi validation middleware for Marble.js",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
@@ -8,9 +8,13 @@
     "start": "yarn watch",
     "watch": "tsc -w",
     "build": "tsc",
-    "test": "jest --config ../../jest.config.js",
-    "clean": "rimraf dist",
-    "postinstall": "node ./deprecation.js"
+    "test": "jest --config jest.config.js",
+    "clean": "rimraf dist tsconfig.tsbuildinfo",
+    "postinstall": "node ./deprecation.js",
+    "prepublish:package": "yarn clean && yarn build && yarn test",
+    "prepublish:package:dev": "yarn prepublish:package",
+    "publish:package": "yarn np",
+    "publish:package:dev": "yarn np --tag dev"
   },
   "files": [
     "dist/",
