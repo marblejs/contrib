@@ -4,11 +4,11 @@ import * as Joi from 'joi';
 import './validator.interface';
 import { HttpRequest, HttpError, HttpStatus } from '@marblejs/http';
 import { from, of, throwError, Observable } from 'rxjs';
-import { mergeMap, catchError, mapTo, switchMap, toArray, map } from 'rxjs/operators';
+import { mergeMap, catchError, mapTo, toArray, map } from 'rxjs/operators';
 import { Schema, SchemaValidator } from './validator.schema';
 import { ExtractedBody, ExtractedParams, ExtractedQuery } from './validator.interface';
 
-const validateSource = (rules: Map<string, any>, options: Joi.ValidationOptions) => (req: HttpRequest) =>
+const validateSource = (rules: Map<string, any>, options: Joi.ValidationOptions) => (req: HttpRequest): Observable<HttpRequest<any, any, any>> =>
   from(rules.keys()).pipe(
     mergeMap(rule => of(req[rule]).pipe(
       mergeMap(item =>
@@ -31,7 +31,11 @@ const validateSource = (rules: Map<string, any>, options: Joi.ValidationOptions)
  */
 export const validator$ = <TBody = any, TParams = any, TQuery = any>
   (schema: Partial<Schema<TBody, TParams, TQuery>>, options: Joi.ValidationOptions = {}) =>
-  (req$: Observable<HttpRequest>) => {
+  (req$: Observable<HttpRequest>): Observable<HttpRequest<
+  ExtractedBody<Required<typeof schema>>,
+  ExtractedParams<Required<typeof schema>>,
+  ExtractedQuery<Required<typeof schema>>
+>> => {
     console.warn('Deprecation warning: @marblejs/middleware-joi is deprecated since v2.0. Use @marblejs/middlware-io instead.');
 
     const result = Joi.validate(schema, SchemaValidator);
@@ -45,11 +49,6 @@ export const validator$ = <TBody = any, TParams = any, TQuery = any>
     }
 
     return req$.pipe(
-      switchMap(validateSource(rules, options)),
-      map(req => req as HttpRequest<
-        ExtractedBody<Required<typeof schema>>,
-        ExtractedParams<Required<typeof schema>>,
-        ExtractedQuery<Required<typeof schema>>
-      >),
+      mergeMap(validateSource(rules, options)),
     );
   };

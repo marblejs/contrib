@@ -54,7 +54,8 @@
   },
   "devDependencies": {
     "@marblejs/core": "^4.0.0-rc.3",
-    "@marblejs/http": "^4.0.0-rc.3"
+    "@marblejs/http": "^4.0.0-rc.3",
+    "@marblejs/testing": "^4.0.0-rc.3"
   },
   "publishConfig": {
     "access": "public"

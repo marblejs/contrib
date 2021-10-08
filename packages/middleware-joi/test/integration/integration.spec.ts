@@ -2,8 +2,9 @@ import { createHttpTestBed, createTestBedSetup } from '@marblejs/testing';
 import { pipe } from 'fp-ts/lib/function';
 import { listener } from '../helpers/api.spec-util';
 
-const testBed = createHttpTestBed({ listener });
-const useTestBedSetup = createTestBedSetup({ testBed });
+const useTestBedSetup = createTestBedSetup({
+  testBed: createHttpTestBed({ listener }),
+});
 
 describe('Joi middleware - Integration', () => {
   const token = '181782881DB38D84';
