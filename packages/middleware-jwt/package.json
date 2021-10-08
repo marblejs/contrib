@@ -12,8 +12,8 @@
     "test": "jest --config jest.config.js",
     "prepublish:package": "yarn clean && yarn build && yarn test",
     "prepublish:package:dev": "yarn prepublish:package",
-    "publish:package": "yarn np",
-    "publish:package:dev": "yarn np --tag dev"
+    "publish:package": "npx np",
+    "publish:package:dev": "npx np --tag dev"
   },
   "files": [
     "dist/"
