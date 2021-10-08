@@ -2,7 +2,7 @@
 
 import * as Joi from 'joi';
 import './validator.interface';
-import { HttpRequest, HttpError, HttpStatus } from '@marblejs/core';
+import { HttpRequest, HttpError, HttpStatus } from '@marblejs/http';
 import { from, of, throwError, Observable } from 'rxjs';
 import { mergeMap, catchError, mapTo, switchMap, toArray, map } from 'rxjs/operators';
 import { Schema, SchemaValidator } from './validator.schema';

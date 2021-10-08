@@ -1,8 +1,8 @@
 /* eslint-disable deprecation/deprecation */
 
-import { HttpRequest } from '@marblejs/core';
+import { HttpRequest } from '@marblejs/http';
 import { bodyParser$ } from '@marblejs/middleware-body';
-import { createMockEffectContext } from '@marblejs/core/dist/+internal/testing';
+import { createMockEffectContext } from '@marblejs/http/dist/+internal/testing.util';
 import { of } from 'rxjs';
 import { validator$, Joi } from '../../src';
 

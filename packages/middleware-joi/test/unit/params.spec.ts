@@ -1,7 +1,7 @@
 /* eslint-disable deprecation/deprecation */
 
 import { of } from 'rxjs';
-import { HttpRequest, RouteParameters } from '@marblejs/core';
+import { HttpRequest, RouteParameters } from '@marblejs/http';
 import { validator$, Joi } from '../../src';
 
 const reqMatched = (

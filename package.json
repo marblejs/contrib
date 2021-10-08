@@ -47,12 +47,11 @@
   "dependencies": {
     "rxjs": "^7.1.0",
     "fp-ts": "^2.8.2",
-    "amqplib": "^0.5.3",
-    "redis": "^3.1.1",
-    "@marblejs/core": "^4.0.0-next.9",
-    "@marblejs/testing": "^4.0.0-next.9",
-    "@marblejs/messaging": "^4.0.0-next.9",
-    "@marblejs/middleware-body": "^4.0.0-next.9"
+    "@marblejs/core": "^4.0.0-rc.3",
+    "@marblejs/http": "^4.0.0-rc.3",
+    "@marblejs/testing": "^4.0.0-rc.3",
+    "@marblejs/messaging": "^4.0.0-rc.3",
+    "@marblejs/middleware-body": "^4.0.0-rc.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.0.0",

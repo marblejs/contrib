@@ -1,6 +1,6 @@
 import * as O from 'fp-ts/lib/Option';
 import { pipe } from 'fp-ts/lib/function';
-import { HttpRequest } from '@marblejs/core';
+import { HttpRequest } from '@marblejs/http';
 
 const splitHeader = (header: string): string[] => header.split(' ');
 

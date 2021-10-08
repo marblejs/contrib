@@ -1,6 +1,6 @@
 import { throwError, of, Observable } from 'rxjs';
 import { map, mergeMap, catchError, tap, mapTo } from 'rxjs/operators';
-import { HttpError, HttpStatus, HttpMiddlewareEffect, HttpRequest } from '@marblejs/core';
+import { HttpError, HttpStatus, HttpMiddlewareEffect, HttpRequest } from '@marblejs/http';
 import { parseAuthorizationHeader } from './jwt.util';
 import { verifyToken$, VerifyOptions } from './jwt.factory';
 

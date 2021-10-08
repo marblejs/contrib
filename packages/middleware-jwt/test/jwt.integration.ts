@@ -1,4 +1,4 @@
-import { httpListener, r, combineRoutes } from '@marblejs/core';
+import { httpListener, r, combineRoutes } from '@marblejs/http';
 import { bodyParser$ } from '@marblejs/middleware-body';
 import { map, mergeMap } from 'rxjs/operators';
 import { of, iif, throwError } from 'rxjs';

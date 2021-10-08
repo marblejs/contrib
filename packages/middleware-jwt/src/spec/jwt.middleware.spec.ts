@@ -1,5 +1,5 @@
-import { HttpRequest, HttpError, HttpStatus } from '@marblejs/core';
-import { createMockEffectContext } from '@marblejs/core/dist/+internal/testing';
+import { HttpRequest, HttpError, HttpStatus } from '@marblejs/http';
+import { createMockEffectContext } from '@marblejs/http/dist/+internal/testing.util';
 import { of, throwError, iif } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import { authorize$ } from '../jwt.middleware';

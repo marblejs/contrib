@@ -2,8 +2,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 import { of } from 'rxjs';
-import { HttpRequest } from '@marblejs/core';
-import { createHttpRequest } from '@marblejs/core/dist/+internal/testing';
+import { HttpRequest } from '@marblejs/http';
+import { createHttpRequest } from '@marblejs/http/dist/+internal/testing.util';
 import { validator$, Joi } from '../../src';
 
 describe('Joi middleware - Header', () => {

@@ -1,6 +1,6 @@
 /* eslint-disable deprecation/deprecation */
 
-import { HttpRequest } from '@marblejs/core';
+import { HttpRequest } from '@marblejs/http';
 import { Observable } from 'rxjs';
 import { validator$ } from '../../src';
 

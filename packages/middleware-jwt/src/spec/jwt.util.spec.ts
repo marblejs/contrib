@@ -1,4 +1,4 @@
-import { HttpRequest } from '@marblejs/core';
+import { HttpRequest } from '@marblejs/http';
 import { parseAuthorizationHeader } from '../jwt.util';
 
 describe('JWT util', () => {
