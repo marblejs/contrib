@@ -11,15 +11,15 @@ A [JWT](http://jwt.io) middleware for [Marble.js](https://github.com/marblejs/ma
 ## Installation
 
 ```
-$ npm i @marblejs/middleware-jwt
+$ npm i @marblejs-contrib/middleware-jwt
 ```
-Requires `@marblejs/core` to be installed.
+Requires `@marblejs/core` and `@marblejs/http` to be installed.
 
 ## Usage
 
 **Generate token:**
 ```typescript
-import { r } from '@marblejs/core';
+import { r } from '@marblejs/http';
 import { generateToken } from '@marblejs-contrib/middleware-jwt';
 import { SECRET_KEY } from './config';
 
@@ -46,7 +46,7 @@ const verifyPayload$ = (payload: { id: string }) =>
 
 **Validate routes:**
 ```typescript
-import { r } from '@marblejs/core';
+import { r } from '@marblejs/http';
 import { authorize$ } from '@marblejs-contrib/middleware-jwt';
 import { SECRET_KEY } from './config';
 
